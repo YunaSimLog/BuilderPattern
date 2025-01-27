@@ -13,7 +13,7 @@ namespace BuilderPattern
         {
             // 1. 빌더 클래스 전용 리스트 생성
             List<StudentBuilder> builders = new List<StudentBuilder>();
-                
+
             // 2. 객체를 최종 생성 하지말고 초기값만 세팅한 빌더 생성
             builders.Add(
                 new StudentBuilder(20250101)
@@ -36,10 +36,7 @@ namespace BuilderPattern
             // 3. 나중에 빌더 리스트를 순회하여 최종 객체 생성을 주도
             for (int i = 0; i < builders.Count; i++)
             {
-                Student student= builders[i].Build();
-                //Console.WriteLine(student.GetType().GetProperties().ToString());
-                Console.WriteLine(string.Join(", ", student.GetType().GetProperties().Select(p => p.Name)));
-                //Console.WriteLine(string.Join(", ", student.GetType().GetProperties().Select(p => p.Name)));
+                Student student = builders[i].Build();
             }
         }
     }
